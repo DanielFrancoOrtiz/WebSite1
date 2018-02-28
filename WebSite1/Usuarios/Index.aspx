@@ -10,11 +10,15 @@
 <body style="height: 254px">
     <form id="form1" runat="server">
         <div>
-            <asp:GridView ID="GridView1" runat="server">
+            <asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
             </asp:GridView>
-            <asp:Button ID="btnNuevo" runat="server" Text="Nuevo" />
-            <asp:Button ID="btnEditar" runat="server" Text="Editar" />
-            <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" />
+            <br />
+            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <br />
+            <br />
+            <asp:Button ID="btnNuevo" runat="server" Text="Nuevo" PostBackUrl="~/Usuarios/wfrmEmpleado.aspx" />
+            <asp:Button ID="btnEditar" runat="server" Text="Editar" OnClick="btnEditar_Click" />
+            <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
             <asp:Button ID="btnSalir" runat="server" Text="Salir" />
             <br />
             <br />

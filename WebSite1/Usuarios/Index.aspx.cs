@@ -22,6 +22,30 @@ public partial class Usuarios_Index : System.Web.UI.Page
 
     }
 
+
+    protected void btnEditar_Click(object sender, EventArgs e)
+    {
+        if (TextBox1.Text.ToString() != null)
+        {
+            if (TextBox1.Text.Length > 0)
+            {
+                Response.Redirect("wfrmEmpleado.aspx?id=" + TextBox1.Text);
+            }
+        }
+
+    }
+
+    protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
+    
+    protected void btnEliminar_Click(object sender, EventArgs e)
+    {
+       
+        obj.eliminarEmpleado(Convert.ToInt32(TextBox1.Text));
+        Response.Redirect("Index.aspx");
+    }
 }
 
 
